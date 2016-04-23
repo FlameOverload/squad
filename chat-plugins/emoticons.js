@@ -1,46 +1,109 @@
-'use strict';
-
-const color = require('../config/color');
-let demFeels = function () {};
-demFeels.getEmotes = function () {
-	return {};
-};
-try {
-	demFeels = require('dem-feels');
-} catch (e) {
-	console.error(e);
-}
+var color = require('../config/color');
 
 exports.parseEmoticons = parseEmoticons;
 
-// for travis build
-if (typeof demFeels.extendEmotes === 'function') {
-	// example extending emotes
-	demFeels.extendEmotes({
-		'(ditto)': 'https://cdn.betterttv.net/emote/554da1a289d53f2d12781907/2x',
-		'#freewolf': 'http://i.imgur.com/ybxWXiG.png',
-		'feelsbn': 'http://i.imgur.com/wp51rIg.png',
-	});
+var emotes = {
+	'#freewolf': 'http://i.imgur.com/ybxWXiG.png',
+	'Doge': 'http://fc01.deviantart.net/fs71/f/2014/279/4/5/doge__by_honeybunny135-d81wk54.png',
+	'feelscri': 'http://i.imgur.com/QAuUW7u.jpg?1',
+	'#murica': 'http://i.imgur.com/d4XueEr.jpg',
+	'#applejuice': 'http://i.imgur.com/s3TJfOB.jpg',
+	'urmom': 'https://static-cdn.jtvnw.net/emoticons/v1/35218/1.0',
+	'facepalm': 'http://i.imgur.com/lv3GmpM.png',
+	'feelscool': 'http://i.imgur.com/qdGngVl.jpg?1',
+	'facepalm2': 'http://i.imgur.com/ylrqFwJ.png',
+	'feelsemo': 'http://i.imgur.com/FPolh5d.jpg',
+	'feelsfdra': 'http://i.imgur.com/ZIcl9Zy.jpg',
+	'feelsbd': 'http://i.imgur.com/YyEdmwX.png',
+	'feelsbm': 'http://i.imgur.com/xwfJb2z.png',
+	'feelswtf': 'http://i.imgur.com/BzZJedC.jpg',
+	'feelsgro': 'http://i.imgur.com/jLhP0bZ.png',
+	'feelsky': 'http://i.imgur.com/BtATPId.png',
+	'udonsay': 'http://r32.imgfast.net/users/3215/23/26/64/smiles/280467785.jpg',
+	'feelslot': 'http://i.imgur.com/tl88F7i.png',
+	'feelsarbk': 'http://i.imgur.com/HqyjN7G.png',
+	'feelsbn': 'http://i.imgur.com/wp51rIg.png',
+	'feelsdd': 'http://i.imgur.com/fXtdLtV.png',
+	'feelsdoge': 'http://i.imgur.com/GklYWvi.png',
+	'feelsgd': 'http://i.imgur.com/Jf0n4BL.png',
+	'feelsgn': 'http://i.imgur.com/juJQh0J.png',
+	'feelsjig': 'http://i.imgur.com/hSzqy5z.png',
+	'feelsbulba': 'http://i.imgur.com/PShsRD2.png',
+	'feelsshrk': 'http://i.imgur.com/amTG3jF.jpg',
+	'kappa': 'http://i.imgur.com/ZxRU4z3.png',
+	'feelsHigh': 'http://i.imgur.com/s9I2bxp.jpg',
+	'meGusta': 'http://cdn.overclock.net/3/36/50x50px-ZC-369517fd_me-gusta-me-gusta-s.png',
+	'feelshp': 'http://i.imgur.com/1W19BDG.png',
+	'feelsmd': 'http://i.imgur.com/DJHMdSw.png',
+	'feelsnv': 'http://i.imgur.com/XF6kIdJ.png',
+	'feelsok': 'http://i.imgur.com/gu3Osve.png',
+	'feelspika': 'http://i.imgur.com/mBq3BAW.png',
+	'feelspink': 'http://i.imgur.com/jqfB8Di.png',
+	'feelspn': 'http://i.imgur.com/wSSM6Zk.png',
+	'feelspr': 'http://i.imgur.com/3VtkKfJ.png',
+	'feelsrg': 'http://i.imgur.com/DsRQCsI.png',
+	'feelsrs': 'http://i.imgur.com/qGEot0R.png',
+	'feelssc': 'http://i.imgur.com/cm6oTZ1.png',
+	'feelscrazy': 'http://i.imgur.com/NiJsT5W.png',
+	'fukya': 'http://i.imgur.com/ampqCZi.gif',
+	'fukno': 'http://i.imgur.com/QjQTx9W.png',
+	'funnylol': 'http://i.imgur.com/SlzCghq.png',
+	'hmmface': 'http://i.imgur.com/Z5lOwfZ.png',
+	'noface': 'http://i.imgur.com/H744eRE.png',
+	'durp': 'http://i.imgur.com/2BloGXG.jpg',
+	'Obama': 'http://i.imgur.com/rBA9M7A.png',
+	'oshet': 'http://i.imgur.com/yr5DjuZ.png',
+	'Sanic': 'http://i.imgur.com/Y6etmna.png',
+	'wtfman': 'http://i.imgur.com/kwR8Re9.png',
+	'waitwat': 'http://i.imgur.com/FpxTQxU.jpg',
+	'xaa': 'http://i.imgur.com/V728AvL.png',
+	'yayface': 'http://i.imgur.com/anY1jf8.png',
+	'trollface': 'http://cdn.overclock.net/a/a0/50x50px-ZC-a0e3f9a7_troll-troll-face.png',
+	'feelswin': 'http://i.imgur.com/rbs9pZG.png?1',
+	'hypnotoad': 'http://i.imgur.com/lJtbSfl.gif',
+	'Kreygasm': 'https://static-cdn.jtvnw.net/emoticons/v1/41/1.0',
+	'feelsilum': 'http://i.imgur.com/CnyGTTD.png',
+	'PeoplesChamp': 'http://i.imgur.com/QMiMBKe.png',
+	'trash': 'http://i.imgur.com/rghiV9b.png',
+	'feelsrb': 'http://i.imgur.com/L6ak1Uk.png',
+	'EleGiggle': 'https://static-cdn.jtvnw.net/emoticons/v1/4339/2.0',
+	'4Head': 'https://static-cdn.jtvnw.net/emoticons/v1/354/1.0',
+	'DansGame': 'https://static-cdn.jtvnw.net/emoticons/v1/33/1.0',
+	'feelspix': 'https://38.media.tumblr.com/260fdf377f5ac9e90b8ee9e609df5e69/tumblr_n3wgykjcVB1s5h198o1_500.gif',
+	'feelstea': 'http://i.imgur.com/M0f2zgJ.jpg?1',
+	'gudone': 'http://i.imgur.com/USkp1b9.png',
+	'feelsem': 'http://orig01.deviantart.net/3f09/f/2010/128/0/a/pika_lick_icon_by_brawler_pika.gif',
+	'god': 'http://i.imgur.com/zwrxKV7.jpg?1',
+	'brkGod': 'http://i.imgur.com/SQgq5wU.png?1',
+	'UTGod': 'http://i.imgur.com/DdShUbi.png?1',
+};
+
+var emotesKeys = Object.keys(emotes);
+var patterns = [];
+var metachars = /[[\]{}()*+?.\\|^$\-,&#\s]/g;
+
+for (var i in emotes) {
+	if (emotes.hasOwnProperty(i)) {
+		patterns.push('(' + i.replace(metachars, '\\$&') + ')');
+	}
 }
-
-const emotes = demFeels.getEmotes();
-
-const emotesKeys = Object.keys(emotes).sort();
+var patternRegex = new RegExp(patterns.join('|'), 'g');
 
 /**
-* Parse emoticons in message.
-*
-* @param {String} message
-* @param {Object} room
-* @param {Object} user
-* @param {Boolean} pm - returns a string if it is in private messages
-* @returns {Boolean|String}
-*/
+ * Parse emoticons in message.
+ *
+ * @param {String} message
+ * @param {Object} room
+ * @param {Object} user
+ * @param {Boolean} pm - returns a string if it is in private messages
+ * @returns {Boolean|String}
+ */
 function parseEmoticons(message, room, user, pm) {
 	if (typeof message !== 'string' || (!pm && room.disableEmoticons)) return false;
 
-	let match = false;
-	let len = emotesKeys.length;
+	var match = false;
+	var len = emotesKeys.length;
+
 
 	while (len--) {
 		if (message && message.indexOf(emotesKeys[len]) >= 0) {
@@ -55,7 +118,10 @@ function parseEmoticons(message, room, user, pm) {
 	message = Tools.escapeHTML(message);
 
 	// add emotes
-	message = demFeels(message);
+	message = message.replace(patternRegex, function (match) {
+		var emote = emotes[match];
+		return typeof emote === 'string' ? '<img src="' + emote + '" title="' + match + '" height="50" width="50" />' : match;
+	});
 
 	// __italics__
 	message = message.replace(/\_\_([^< ](?:[^<]*?[^< ])?)\_\_(?![^<]*?<\/a)/g, '<i>$1</i>');
@@ -63,10 +129,10 @@ function parseEmoticons(message, room, user, pm) {
 	// **bold**
 	message = message.replace(/\*\*([^< ](?:[^<]*?[^< ])?)\*\*/g, '<b>$1</b>');
 
-	let group = user.getIdentity().charAt(0);
+	var group = user.getIdentity().charAt(0);
 	if (room.auth) group = room.auth[user.userid] || group;
 
-	let style = "background:none;border:0;padding:0 5px 0 0;font-family:Verdana,Helvetica,Arial,sans-serif;font-size:9pt;cursor:pointer";
+	var style = "background:none;border:0;padding:0 5px 0 0;font-family:Verdana,Helvetica,Arial,sans-serif;font-size:9pt;cursor:pointer";
 
 	message = "<div class='chat'>" + "<small>" + group + "</small>" + "<button name='parseCommand' value='/user " + user.name + "' style='" + style + "'>" + "<b><font color='" + color(user.userid) + "'>" + user.name + ":</font></b>" + "</button><em class='mine'>" + message + "</em></div>";
 	if (pm) return message;
@@ -77,27 +143,27 @@ function parseEmoticons(message, room, user, pm) {
 }
 
 /**
-* Create a two column table listing emoticons.
-*
-* @return {String} emotes table
-*/
+ * Create a two column table listing emoticons.
+ *
+ * @return {String} emotes table
+ */
 function create_table() {
-	let emotes_name = Object.keys(emotes).sort();
-	let emotes_list = [];
-	let emotes_group_list = [];
-	let len = emotes_name.length;
+	var emotes_name = Object.keys(emotes);
+	var emotes_list = [];
+	var emotes_group_list = [];
+	var len = emotes_name.length;
 
-	for (let i = 0; i < len; i++) {
+	for (var i = 0; i < len; i++) {
 		emotes_list.push("<td>" +
 			"<img src='" + emotes[emotes_name[i]] + "'' title='" + emotes_name[i] + "' height='50' width='50' />" +
 			emotes_name[i] + "</td>");
 	}
 
-	let emotes_list_right = emotes_list.splice(len / 2, len / 2);
+	var emotes_list_right = emotes_list.splice(len / 2, len / 2);
 
-	for (let i = 0; i < len / 2; i++) {
-		let emote1 = emotes_list[i];
-		let emote2 = emotes_list_right[i];
+	for (var i = 0; i < len / 2; i++) {
+		var emote1 = emotes_list[i],
+			emote2 = emotes_list_right[i];
 		if (emote2) {
 			emotes_group_list.push("<tr>" + emote1 + emote2 + "</tr>");
 		} else {
@@ -108,7 +174,7 @@ function create_table() {
 	return "<div class='infobox'><center><b><u>List of Emoticons</u></b></center>" + "<div class='infobox-limited'><table border='1' cellspacing='0' cellpadding='5' width='100%'>" + "<tbody>" + emotes_group_list.join("") + "</tbody>" + "</table></div></div>";
 }
 
-let emotes_table = create_table();
+var emotes_table = create_table();
 
 exports.commands = {
 	blockemote: 'blockemoticons',
@@ -155,9 +221,9 @@ exports.commands = {
 	rande: 'randemote',
 	randemote: function (target, room, user) {
 		if (!this.runBroadcast()) return;
-		let rng = Math.floor(Math.random() * emotesKeys.length);
-		let randomEmote = emotesKeys[rng];
+		var rng = Math.floor(Math.random() * emotesKeys.length);
+		var randomEmote = emotesKeys[rng];
 		this.sendReplyBox("<img src='" + emotes[randomEmote] + "' title='" + randomEmote + "' height='50' width='50' />");
 	},
-	randemotehelp: ["/randemote - Get a random emote."],
+	randemotehelp: ["/randemote - Get a random emote."]
 };

@@ -141,10 +141,10 @@ Commands have access to the following functions:
 
 	Should usually be near the top of the command, like:
 
-		if (!this.canBroadcast()) return false;
+		if (!this.runBroadcast()) return false;
 
 `this.runBroadcast(suppressMessage)`
-*	Functionally the same as `this.canBroadcast()`. However, it will look as
+*	Functionally the same as `this.runBroadcast()`. However, it will look as
 	if the user had written the text `suppressMessage`.
 
 `this.canTalk()`
@@ -162,7 +162,7 @@ Commands have access to the following functions:
 	If it has a falsy value, the check won't be attached to any room.
 	In addition to running the checks from `this.canTalk()`, it also checks
 	to see if the message has any banned words, is too long, or was just
-	sent by the user. Returns the filtered message, or a falsy value if the
+	sent by the user. Returns the filtered message, or a falsy value if the 
 	user can't speak.
 
 	Should usually be near the top of the command, like:
@@ -195,6 +195,12 @@ Commands have access to the following functions:
 	value if no user with that username exists.
 	By default, this will track users across name changes. However, if
 	`exactName` is true, it will enforce exact matches.
+
+`this.getLastIdOf(user)`
+*	Returns a user's most recently used userid. If a user isn't a guest,
+	this works the same way as `user.userid`, but if the user is a guest
+	(i.e. has logged out), this returns the user's most recent non-guest
+	userid.
 
 `this.splitTarget(target, exactName)`
 *	Splits a target in the form `<user>, <message>` into its constituent parts.

@@ -52,6 +52,8 @@
 const fs = require('fs');
 const path = require('path');
 
+require("sugar");
+
 /*********************************************************
  * Make sure we have everything set up correctly
  *********************************************************/
