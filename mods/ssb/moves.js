@@ -1,70 +1,31 @@
 'use strict';
+// customary sugar
+require("sugar");
 
 exports.BattleMovedex = {
 	// sparkychild
-	"furrycosplay": {
-		isNonstandard: true,
-		accuracy: true,
-		category: "Status",
-		id: "furrycosplay",
-		isViable: true,
-		name: "Furry Cosplay",
-		pp: 5,
-		priority: 5,
-		flags: {},
-		onTryHit: function (source, target) {
-			this.attrLastMove("[still]");
+	"vibrato": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		id: "vibrato",
+		name: "Vibrato",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		ignoreImmunity: true,
+		target: "normal",
+		type: "Ground",
+		onTryHit: function () {
+			this.attrLastMove("[anim]earthpower");
 		},
-		onHit: function (pokemon, target, move) {
-			// litle surprise - 15% chance of failing so GL!
-			if (Math.random() >  0.85) {
-				this.add("c|~sparkychild|Ahhhh! s-stop looking at me like that! i-i was just changing my costume... o////o");
-				this.add("c|~sparkychild|/me faints");
-				pokemon.selfFaint = true;
-				return pokemon.faint();
-			}
-			// substitute moves and set weather
-			function setMove(oldMove, moveid) {
-				let index = pokemon.moves.indexOf(oldMove);
-				if (index === -1) return;
-				let move = Tools.getMove(moveid);
-				let sketchedMove = {
-					move: move.name,
-					id: move.id,
-					pp: move.pp,
-					maxpp: move.pp,
-					target: move.target,
-					disabled: false,
-					used: false,
-				};
-				pokemon.moveset[index] = sketchedMove;
-				pokemon.moves[index] = toId(move.name);
-			}
-			// protect
-			this.useMove("Protect", pokemon);
-			let subs = [["thunder", "searingshot"], ["steameruption", "solarbeam"], ["hurricane", "earthpower"]];
-			if (pokemon.template.speciesid === 'pikachu' && pokemon.formeChange('Fennekin')) {
-				subs.forEach(s => setMove(s[0], s[1]));
-				this.add('-formechange', pokemon, 'Fennekin', '[msg]');
-				this.setWeather('desolateland');
-			} else if (pokemon.formeChange('Pikachu')) {
-				subs.forEach(s => setMove(s[1], s[0]));
-				this.add('-formechange', pokemon, 'Pikachu', '[msg]');
-				this.setWeather('primordialsea');
-			}
-			// make changing form available in consecutive turns
-			delete pokemon.volatiles.stall;
-
-			// limit boosts from this move.
-			let SpABoost = 1;
-			let SpeBoost = 1;
-			if (pokemon.boosts.spa && pokemon.boosts.spa >= 1) SpABoost = 0;
-			if (pokemon.boosts.spe && pokemon.boosts.spe >= 1) SpeBoost = 0;
-			this.boost({spa:SpABoost, spe:SpeBoost}, pokemon);
-			this.add("c|~sparkychild|There! All done! D-do you like it? :3");
+		onEffectiveness: function (typeMod, type, move) {
+			return typeMod + this.getEffectiveness('Rock', type);
 		},
-		target: "self",
-		type: "Normal",
+		secondary: {
+			status: "par",
+			chance: 100,
+		},
 	},
 //ReturningAvenger
 	"aquasubscribe": {
@@ -164,7 +125,7 @@ exports.BattleMovedex = {
 //TheGodOfPie
 	"handsonic": {
 		accuracy: 100,
-		basePower: 100,
+		basePower: 130,
 		category: "Physical",
 		id: "handsonic",
 		name: "Hand Sonic",
@@ -179,33 +140,6 @@ exports.BattleMovedex = {
 		secondary: false,
 		target: "normal",
 		type: "Psychic"
-	},
-//Chaotic
-	"banterhammer": {
-		accuracy: 100,
-		basePower: 0,
-		category: "Status",
-		id: "banterhammer",
-		name: "Banter Hammer",
-		pp: 10,
-		priority: 0,
-		onPrepareHit: function (target, source) {
-			this.attrLastMove('[still]');
-			this.add('-anim', source, "Overheat", target);
-		},
-		flags: {protect: 1, reflectable: 1, mirror: 1, defrost: 1},
-		status: 'brn',
-		onHit: function (target, source) {
-            target.addVolatile('taunt');
-            target.addVolatile('confusion');
-            target.addVolatile('curse');
-            target.addVolatile('torment');
-            target.addVolatile('healblock');
-            target.addVolatile('embargo');
-        },
-		secondary: false,
-		target: "normal",
-		type: "Fire"
 	},
 //Mystifi
 	"cutenessspell": {
@@ -328,7 +262,7 @@ exports.BattleMovedex = {
 		},
 		secondary: false,
 		target: "self",
-		type: "Bug"
+		type: "Fairy"
 	},
 //vulpixmayhem
 	"pixiepower": {
@@ -374,5 +308,75 @@ exports.BattleMovedex = {
 		target: "normal",
 		type: "Fighting",
 		},
+	},
+	"rainbowblast": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		id: "rainbowblast",
+		name: "Rainbow Blast",
+		pp: 10,
+		priority: 0,
+		onPrepareHit: function (target, source, move) {
+            this.attrLastMove('[still]');
+			this.add('-anim', source, "Focus Blast", target);
+			move.type = Object.keys(Tools.data.TypeChart).randomize()[0];
+		},
+		onHit: function (target, source, move) {
+			this.add(move.type + "!");
+		},
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Psychic"
+	},
+	"choke": {
+		accuracy: 100,
+		basePower: 130,
+		category: "Physical",
+		id: "choke",
+		name: "Choke",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		secondary: false,
+		target: "normal",
+		type: "Dragon"
+	},
+	// Smoke Weed Eer Day- status Spore Spider Webs and Sticky Webs
+	"smokeweederryday": {
+		accuracy: true,
+		category: "Status",
+		id: "smokeweederryday",
+		name: "Smoke Weed Er'ry Day",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onHit: function (source) {
+			this.useMove("spore", source);
+			this.useMove("spiderweb", source);
+			this.useMove("stickyweb", source);
+		},
+		secondary: false,
+		target: "normal",
+		type: "Grass"
+	},
+	"ultradrain": {
+		accuracy: true,
+		category: "Special",
+		id: "ultradrain",
+		basePower: 130,
+		name: "Ultra Drain",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onHit: function (source) {
+			this.useMove("spore", source);
+			this.useMove("spiderweb", source);
+			this.useMove("stickyweb", source);
+		},
+		secondary: false,
+		target: "normal",
+		type: "Grass"
 	},
 };

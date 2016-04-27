@@ -1665,11 +1665,12 @@ exports.Formats = [
 		onSwitchIn: function (pokemon) {
 			var name = toId(pokemon.illusion ? pokemon.illusion.name : pokemon.name);
 			// No OP pls. Balance stuff, changing them upon switch in. Wonder Guard gets curse to minimise their turns out.
+			/*
 			if (pokemon.getAbility().id === 'wonderguard') {
 				pokemon.addVolatile('curse', pokemon);
 				this.add('-message', pokemon.name + "'s Wonder Guard has cursed it!");
 			}
-
+			*/
 			// Add here more hacky stuff for mega abilities.
 			// This happens when the mega switches in, as opposed to mega-evolving on the turn.
 			var oldAbility = pokemon.ability;
@@ -1686,11 +1687,47 @@ exports.Formats = [
 			// Add here special typings, done for flavour mainly.
 			if (name === 'vulpixmayhem' && !pokemon.illusion) {
 				this.add('-start', pokemon, 'typechange', 'Fire/Fairy');
-				pokemon.typesData = [
-					{type: 'Fire', suppressed: false,  isAdded: false},
-					{type: 'Fairy', suppressed: false,  isAdded: false}
-				];
+				pokemon.types = ["Fire", "Fairy"];
 			}
+			if (name === 'animaignis' && !pokemon.illusion) {
+				this.add('-start', pokemon, 'typechange', 'Water/Dragon');
+				pokemon.types = ["Water", "Dragon"];
+			}
+			if (name === 'djclifford14' && !pokemon.illusion) {
+				this.add('-start', pokemon, 'typechange', 'Dragon/Steel');
+				pokemon.types = ["Dragon", "Steel"];
+			}
+			if (name === "tamas" && !pokemon.illusion) {
+				this.boost({atk:2,spe:2,spa:2,spd:2,def:2}, pokemon);
+			}
+			if (name === "sparktrain" && !pokemon.illusion) {
+				this.boost({atk:2,spe:2,spa:2,spd:2,def:2}, pokemon);
+			}
+			if (name === "mzfoxy" && !pokemon.illusion) {
+				this.boost({atk:1,spe:1,spa:1,spd:1,def:1}, pokemon);
+			}
+			if (name === "theduke1718" && !pokemon.illusion) {
+				this.boost({atk:1,spe:1,spa:1,spd:1,def:1}, pokemon);
+			}
+			if (name === "theaquaphoenix" && !pokemon.illusion) {
+				this.boost({atk:1,spe:1,spa:1,spd:1,def:1}, pokemon);
+			}
+			if (name === "macdredog" && !pokemon.illusion) {
+				this.boost({atk:2}, pokemon);
+			}
+			if (name === "skillet" && !pokemon.illusion) {
+				this.boost({atk:2,spe:2}, pokemon);
+			}
+			if (name === "golduckbreak" && !pokemon.illusion) {
+				this.boost({spa:1,spe:1}, pokemon);
+			}
+			if (name === "nazimoderino" && !pokemon.illusion) {
+				this.boost({atk:3,spe:3,spa:3,spd:3,def:3}, pokemon);
+			}
+			if (name === "fender" && !pokemon.illusion) {
+				this.boost({atk:1,spe:1,spa:1,spd:1,def:1}, pokemon);
+			}
+			
 
 			// Edgy switch-in sentences go here.
 			// Sentences vary in style and how they are presented, so each Pokémon has its own way of sending them.
@@ -1698,9 +1735,6 @@ exports.Formats = [
 			var sentence = '';
 
 			// Admins.
-			if (name === 'sparkychild') {
-    			this.add('c|✂sparkychild|D-do you think im cute? :3');
-			}
 			if (name === 'specsmegabeedrill') {
 				this.add('c|$SpecsMegaBeedrill|Better Beelieve it!');
 				this.boost({spa:4, def:2}); // spatk beedrill can use the boosts
@@ -1733,7 +1767,6 @@ exports.Formats = [
 			}
 			if (name === 'thegodofpie') {
 				this.add('c|&TheGodOfPie|Get your Helmets on. 360 NO-SCOPES INCOMING!');
-				this.useMove('topsyturvy', pokemon);
 			}
 			if (name === 'chaotic') {
 				this.add('c|%Chaotic|Get ready for the SUPER HOT FIREEE!!!');
@@ -1799,9 +1832,6 @@ exports.Formats = [
 			var sentence = '';
 
 			// Admins.
-			if (name === 'sparkychild' && !pokemon.selfFaint) {
-				this.add('c|✂sparkychild|My fur is ruined......');
-			}
 			if (name === 'specsmegabeedrill') {
 				this.add('c|$SpecsMegaBeedrill|Don\'t Bee like that you haxor!');
 			}	
@@ -1926,15 +1956,6 @@ exports.Formats = [
 				};
 			}
 			var name = toId(pokemon.illusion && move.sourceEffect === 'allyswitch' ? pokemon.illusion.name : pokemon.name);
-			if (name === "sparkychild" && move.id === "hypervoice") {
-				move.name = "Nanairo Shinfoni";
-				move.basePower = 140;
-				move.ignoreDefensive = true;
-				move.type = "Electric";
-				move.onHit = function () {
-        			this.add('c|sparkychild|My music. Will it reach them?');
-    			};
-			}
 			if (name === "returningavenger" && move.id === "aquajet") {
 				move.name = "Aqua Subscribe";
 				move.basePower = 90;
@@ -1967,16 +1988,6 @@ exports.Formats = [
 				move.recoil = [1, 4];
 				move.accuracy = 100;
 			}
-			if (move.id === 'tackle' && name === 'thegodofpie') {
-				move.name = 'Electron Storm';
-				move.secondaries = [{chance: 70, status: 'par'}];
-				move.type = 'Electric',
-				move.basePower = 200;
-				move.onTryHit = function (target, source, move) {
-					this.attrLastMove('[still]');
-					this.add('-anim', source, "Discharge", target);
-				};
-    		}
     		if (move.id === 'embargo' && name === 'chaotic') {
 				move.name = 'Banter Hammer';
 				move.isBounceable = false;

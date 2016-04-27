@@ -1,0 +1,193 @@
+Emg E4 Volco (Torterra) @ Leftovers
+EVs: 252 HP / 252 Atk / 4 Def
+Adamant Nature
+Ability: Let's Do This
+	-Boosts Atk & Spe by 2 upon switch-in
+	-Can only be affected by direct damage
+Moves: Precipice Blades, Spore, Head Smash
+Special Move: Wood Tree Sword
+	(150 BP, 90% Accuracy, Physical, Grass-type, 1/3 Recoil [not in effect due to ability])
+
+sparkychild (Whimsicott) @ Life Orb
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+Ability: Trickster
+	-Clears the target's positive boosts upon switch-in
+	-Attacks with secondary effects have their power boosted; nullifies the effects.
+Moves: Seed Flare, Blue Flare, Moonblast
+Special Move: Tsundere
+	(100 BP, 100% Accuracy, Special, Ground-type, 100% chance to paralyze target, Adds Rock to its type effectiveness, Hits Flying-types)
+
+ReturningAvenger (Ludicolo) @ Life Orb
+EVs: 4 HP / 252 SpA / 252 Spe
+Timid Nature
+Ability: Primordial Sea
+Moves: Giga Darin, Ice Beam, Focus Blast
+Special Move: Aqua Subscribe
+	(90 BP, 100% Accuracy, Special, Water-type, +1 priority, +1 Spe & SpA to self after use)
+
+Golduck BREAK (Golduck) @ Life Orb
+EVs: 4 HP / 252 SpA / 252 SpD
+Timid Nature
+Ability: Primordial Sea
+Moves: Calm Mind, Frost Breath, Psychic, Hydro Pump
+Special Move: None
+
+Gyaratoast (Gyarados) @ Choice Scarf
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+Ability: Rock Head
+Moves: Head Smash, Brave Bird, Double-Edge
+Special Move: BREADSMASH
+	(150 BP, 85% Accuracy, Physical, Water-type, 1/2 Recoil [not in effect due to ability], 20% chance to make the target flinch)
+
+Bottered Toast (Bisharp) @ Lagging Tail
+EVs: 252 HP / 252 SpD / 4 Def
+Serious Nature
+Ability: No Guard
+Moves: Guillotine, Sheer Cold, Fissure, Horn Drill
+Special Move: None
+
+TheFourthReplica (Glalie) @ Focus Sash
+EVs: 208 Atk / 140 SpA / 160 Spe
+Naive Nature
+Ability: Refrigerate
+Moves: Boomburst, Extreme Speed, Return, Recover
+Special Move: None
+
+Hooded Angel (Victini) @ Life Orb
+EVs: 252 Atk / 4 SpA / 252 Spe
+Hasty Nature
+Ability: Contrary
+Moves: Psycho Boost, Dragon Ascent, Overheat, U-turn
+Special Move: None
+
+Phoenix CourierNX (Heracross) @ Choice Scarf
+EVs: 252 Atk / 252 Spe / 4 SpD
+Jolly Nature
+Ability: Huge Power
+Moves: Close Combat, Megahorn, Earthquake, High Jump Kick
+Special Move: None
+
+CheeseMan195x (Oshawott) @ Eviolite
+EVs: 252 Atk / 248 HP / 8 SpD
+Jolly Nature
+Ability: Wonder Guard (will get the effects of Curse however)
+Moves: Belly Drum, Explosion
+Special Move: None
+
+Mystic Rebel (Zoroark) @ Expert Belt
+EVs: 252 SpA / 252 Spe / 4 SpD
+Timid Nature
+Ability: Mega Launcher
+Moves: Origin Pulse, Dark Pulse, Aura Sphere, Dragon Pulse
+Special Move: None
+
+Odd Cytoplasm (Zygarde) @ Assault Vest
+EVs: 252 Atk / 252 SpD / 4 HP
+Adamant Nature
+Ability: Speed Boost
+Moves: Outrage, Bolt Strike, Dragon Ascent, Precipice Blades
+Special Move: None
+
+SpecsMegaBeedrill (Beedrill-Mega) @ Choice Specs
+EVs: 252 SpA / 252 Spe / 4 SpD
+	- +4 SpA and +2 Def upon switch-in
+Timid Nature
+Ability: Adaptability
+Moves: Blue Flare, Sludge Wave, Earth Power
+Special Move: Hive Five
+	(140 BP, 100% Accuracy, Special, Bug-type, Sounds based & Bypasses substitutes, 100% chance to confuse the target)
+
+MzFoxy (Chespin) @ Air Balloon
+EVs: 252 SpA / 248 HP / 8 SpD
+Modest Nature
+Ability: Wonder Guard (will get the effects of Curse however)
+Moves: Hurricane, Seed Flare, Nasty Plot, Leech Seed
+Special Move: None
+
+Hawk619 (Staraptor) @ Choice Band
+EVs: 252 Atk / 252 Spe / 4 SpD
+Jolly Nature
+Ability: Delta Stream
+Moves: Close Combat, Brave Bird, Double-Edge, Dragon Ascent
+Special Move: None
+
+TheGodOfPie (Gallade-Mega) @ Galladite
+EVs: 252 Atk / 252 Spe / 4 HP
+Jolly Nature
+Ability: Mystic Blades
+	- Uses Topsy-turvy upon switch-in
+	- Attacker is damaged 1/8 of its max HP if it makes contact with this Pokemon
+Moves: Earthquake, Extreme Speed, High Jump Kick
+Special Move: Hand Sonic
+	(130 BP, 100% Accuracy, Physical, Psychic-type, Punch based & Makes contact)
+
+Mystifi (Clefairy) @ Eviolite
+EVs: 252 Def / 252 HP / 4 SpD
+	- +1 to all stats (except evasion) upon switch-in
+Bold Nature
+Ability: Filter
+Moves: Calm Mind, Baton Pass, Soft-boiled
+Special Move: Cuteness Spell
+	(20 BP, 100% Accuracy, Special, Fairy-type, +20 BP per positive stat boost)
+
+Kie (Feraligatr) @ Leftovers
+EVs: 56 HP / 252 Atk / 196 SpD
+Adamant Nature
+Ability: Primordial Sea
+Moves: Earthquake, Ice Punch, Waterfall, Dragon Dance
+Special Move: None
+
+Jigglykong (Porygon2) @ Eviolite
+EVs: 252 Def / 252 HP / 4 SpA
+Bold Nature
+Ability: 3Bawlky5U
+	-Restores 1/3 of its max HP and cures its major status condition when switches out
+Moves: Toxic, Recover, Hex
+Special Move: Plasma Blast
+	(120 BP, 100% Accuracy, Special, Normal-type, 20% chance to burn target, Adds Electric to its type effectiveness)
+
+Incognito Style (Honchkrow) @ Life Orb
+EVs: 252 Atk / 4 HP / 252 SpD
+Jolly Nature
+Ability: Protean
+Moves: Knock Off, Flare Blitz, Dragon Ascent, Wild Charge
+Special Move: None
+
+djclifford14 (Haxorus) @ Life Orb
+EVs: 252 Def / 252 HP / 4 SpD
+Jolly Nature
+Ability: Tough Claws
+Moves: Drain Punch, Iron Head, Dragon Claw, Poison Jab
+Special Move: None
+
+TheAquaPhoenix (Articuno) @ Lefovers
+EVs: 252 Def / 4 HP / 252 SpD
+Timid Nature
+Ability: No Guard
+Moves: Hydro Pump, Blizzard, Hurricane, Focus Blast
+Special Move: None
+
+Sota Hirugashi (Victini) @ Expert Belt
+EVs: 252 Atk / 252 Spe / 4 HP
+Adamant Nature
+Ability: Contrary
+Moves: V-create, U-turn, Bolt Strike, Zen Headbutt
+Special Move: None
+
+gday (Jigglypuff) @ Eviolite
+EVs: 252 SpA / 252 SpD / 4 HP
+Modest Nature
+Ability: gday gday
+	-Pokemon's stat changes are doubled, both raised and lowered
+Moves: Mooblast, Stored Power, Moonlight
+Special Move: feelsjig
+	(Status, Fairy-type, Raises every stat [except eva] by 2, can only be used 1st turn out)
+
+LumBerryClefable2 (Clefable) @ Power Herb
+EVs: 252 SpA / 8 Def / 248 HP
+Modest Nature
+Ability: Simple
+Moves: Moonblast, Iron Defense, Soft-boiled, Geomancy
+Special Move: None

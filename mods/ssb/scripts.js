@@ -12,28 +12,28 @@ randomSeasonalMeleeTeam: function (side) {
 				baseSignatureMove: 'woodtreesword', signatureMove: "Wood Tree Sword",
 				evs: {hp:252, atk:252, def:4}, nature: 'adamant',
 			},
-			'sparkychild': {
-				species: 'Pikachu', ability: 'Furry Tale', item: 'Light Ball', gender: "F",
-				moves: ['Thunder', 'Steam Eruption', 'hurricane'],
-				baseSignatureMove: 'furrycosplay', signatureMove: "Furry Cosplay",
+			'~sparkychild': {
+				species: 'Whimsicott', ability: 'Opera Diva', item: 'Life Orb',
+				moves: ['seedflare', 'blueflare', 'moonblast'],
+				baseSignatureMove: 'vibrato', signatureMove: "Vibrato",
 				evs: {hp:4, spa:252, spe:252}, nature: 'Timid',
 			},
 			'ReturningAvenger': {
 				species: 'Ludicolo', ability: 'Primordial Sea', item: 'Life Orb', gender: "M", shiny: true,
 				moves: ['gigadrain', 'icebeam', 'focusblast'],
-				baseSignatureMove: 'aquajet', signatureMove: "Aqua Subscribe",
+				baseSignatureMove: 'aquasubscribe', signatureMove: "Aqua Subscribe",
 				evs: {hp:4, spa:252, spe:252}, nature: 'Timid',
 			},
 			'Golduck BREAK': {
 				species: 'Golduck', ability: 'Primordial Sea', item: 'Life Orb', gender: 'M',
 				moves: ['calmmind', 'frostbreath', 'psychic'],
 				signatureMove: 'Hydro Pump',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid',
 			},
 			'Gyaratoast': {
 				species: 'Gyarados', ability: 'Rock Head', item: 'Choice Scarf', gender: "F", shiny: true,
 				moves: ['headsmash', 'bravebird', 'doubleedge'],
-				baseSignatureMove: 'waterfall', signatureMove: "BREADSMASH",
+				baseSignatureMove: 'breadsmash', signatureMove: "BREADSMASH",
 				evs: {spd:4, atk:252, spe:252}, nature: 'Jolly',
 			},
 			'Bottered Toast': {
@@ -64,7 +64,7 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Oshawott', ability: 'Wonder Guard', item: 'Eviolite', gender: "M",
 				moves: ['bellydrum'],
 				baseSignatureMove: 'explosion', signatureMove: "Explosion",
-				evs: {atk:252, hp:248, spd:8}, nature: 'Jolly',
+				evs: {atk:252, hp:248, spe:8}, nature: 'Jolly',
 			},
 			'Mystic Rebel': {
 				species: 'Zoroark', ability: 'Mega Launcher', item: 'Expert Belt', gender: "M",
@@ -76,12 +76,12 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Zygarde', ability: 'Speed Boost', item: 'Assault Vest', gender: "M",
 				moves: ['outrage', 'boltstrike', 'dragonascent'],
 				baseSignatureMove: 'precipiceblades', signatureMove: "Precipice Blades",
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Adamant'
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Adamant'
 			},
 			'SpecsMegaBeedrill': {
 				species: 'Beedrill-Mega', ability: 'Adaptability', item: 'Choice Specs', gender: "M",
 				moves: ['blueflare', 'sludgewave', 'earthpower'],
-				baseSignatureMove: 'bugbuzz', signatureMove: "Hive Five",
+				baseSignatureMove: 'hivefive', signatureMove: "Hive Five",
 				evs: {spa:252, spe:252, spd:4}, nature: 'Timid',
 			},
 			'MzFoxy': {
@@ -97,11 +97,11 @@ randomSeasonalMeleeTeam: function (side) {
 				evs: {atk:252, spe:252, spd:4}, nature: 'Jolly',
 			},
 			'TheGodOfPie': {
-				species: 'Electivire', ability: 'Moxie', item: 'Life Orb', gender: 'M',
-				moves: ['earthquake', 'powerwhip', 'highjumpkick'],
-				signatureMove: 'Volt Tackle',
-				evs: {hp:4, atk:252, spe:252}, nature: 'Adamant',
-			},
+					species: 'Gallade-Mega', ability: 'Mystic Blades', item: 'Galladite', gender: 'M', shiny: true,
+					moves: ['earthquake', 'extremespeed', 'highjumpkick'],
+					signatureMove: "Hand Sonic",
+					evs: {hp:4, atk:252, spe:252}, nature: 'Jolly',
+				},
 			'Mystifi': {
 			    species: 'Clefairy', ability: 'Filter', item: 'Eviolite', gender: 'M',
 			    moves: ['calmmind', 'batonpass', 'softboiled'],
@@ -112,7 +112,7 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Feraligatr', ability: 'Primordial Sea', item: 'Leftovers', gender: 'M',
 				moves: ['earthquake', 'icepunch', 'dragondance'],
 				signatureMove: 'waterfall',
-				evs: {hp:56, atk:252, spd:196}, nature: 'Adamant'
+				evs: {hp:56, atk:252, spe:196}, nature: 'Adamant'
 			},
 			'Jigglykong': {
 				species: 'Porygon2', ability: '3Bawlky5U', item: 'Eviolite', gender: 'M',
@@ -124,19 +124,19 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Honchkrow', ability: 'Protean', item: 'Life Orb', gender: 'M',
 				moves: ['knockoff', 'flareblitz', 'dragonascent'],
 				baseSignatureMove: 'wildcharge', signatureMove: "Wild Charge",
-				evs: {spd:252, spa:252, hp:4}, nature: 'Jolly'
+				evs: {spe:252, atk:252, hp:4}, nature: 'Jolly'
 			},
 			'djclifford14': {
 				species: 'Haxorus', ability: 'Tough Claws', item: 'Life Orb', gender: 'M', shiny: true,
 				moves: ['drainpunch', 'ironhead', 'poisonjab'],
 				signatureMove: 'Dragon Claw',
-				evs: {spd:252, spa:252, hp:4}, nature: 'Jolly'
+				evs: {spe:252, spa:252, hp:4}, nature: 'Jolly'
 			},
 			'TheAquaPhoenix': {
 				species: 'Articuno', ability: 'No Guard', item: 'Leftovers', gender: 'M', shiny: true,
 				moves: ['hydropump', 'focusblast', 'hurricane'],
 				signatureMove: 'Blizzard',
-				evs: {spd:252, spa:252, spe:4}, nature: 'Timid'
+				evs: {spe:252, spa:252, spe:4}, nature: 'Timid'
 			},
 			'Sota Higurashi': {
 				species: 'Victini', ability: 'Contrary', item: 'Expert Belt', gender: 'M',
@@ -147,8 +147,8 @@ randomSeasonalMeleeTeam: function (side) {
 			'gday': {
 				species: 'Jigglypuff', ability: 'gday gday', item: 'Eviolite', gender: 'M',
 				moves: ['moonblast', 'storedpower', 'moonlight'],
-				baseSignatureMove: 'quiverdance', signatureMove: 'feelsjig',
-				evs: {spa:252, spd:252, hp:4}, nature: 'Modest'
+				baseSignatureMove: 'feelsjig', signatureMove: 'feelsjig',
+				evs: {spa:252, spe:252, hp:4}, nature: 'Modest'
 			},
 			'LumBerryClefable2': {
 				species: 'Clefable', ability: 'Simple', item: 'Power Herb', gender: 'M',
@@ -160,7 +160,7 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Seviper', ability: 'Banter', item: 'Choice Scarf', gender: 'M',
 				moves: ['sludgewave', 'blueflare', 'energyball'],
 				signatureMove: 'Switcheroo', 
-				evs: {spa:252, spd:252, hp:4}, nature: 'Timid'
+				evs: {spa:252, spe:252, hp:4}, nature: 'Timid'
 			},
 			'vulpix mayhem': {
 				species: 'Vulpix', ability: 'Pidgeot\'s Blessing', item: 'lifeorb', gender: 'F',
@@ -170,74 +170,74 @@ randomSeasonalMeleeTeam: function (side) {
 			},	
 			'Master Mewking': {
 				species: 'Mew', ability: 'protean', item: 'life orb', gender: 'M', shiny: true,
-				moves: ['aurasphere', 'flamethrower', 'calmmind'],
-				signatureMove: 'Psystrike',
+				moves: ['aurasphere', 'flamethrower', 'psystrike'],
+				signatureMove: 'Rainbow Blast',
 				evs: {spa: 252, spe: 252, spd: 4}, nature: 'Timid'
 			},	
 			'cbrevan': {
 				species: 'Revenankh', ability: 'Huge Power', item: 'choiceband', gender: 'M',
 				moves: ['shadowstrike', 'knockoff', 'icepunch'],
 				baseSignatureMove: 'drainpunch', signatureMove: 'drainpunch',
-				evs: {atk: 252, spd: 196, hp: 56}, nature: 'Adamant'
+				evs: {atk: 252, spe: 196, hp: 56}, nature: 'Adamant'
 			},
 			'Hydrostatics': {
 				species: 'Infernape', ability: 'Iron Fist', item: 'lifeorb', gender: 'M',
 				moves: ['machpunch', 'closecombat', 'thunderpunch'],
 				signatureMove: 'Fire Punch',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly'
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly'
 			},	
 			'Back At My Day...': {
 				species: 'Noivern', ability: 'Headphones', item: 'lifeorb', gender: 'M',
 				moves: ['bugbuzz', 'chatter', 'flamethrower'],
 				baseSignatureMove: 'dragonpulse', signatureMove: 'Dragon Pulse',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid'
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid'
 			},
 			'Hack_Guy': {
 				species: 'Victini', ability: 'Contrary', item: 'lifeorb', gender: 'M',
 				moves: ['psychoboost', 'dracometeor', 'leafstorm'],
 				baseSignatureMove: 'overheat', signatureMove: 'overheat',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid'			},	
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid'			},	
 			'Tamas': {
 				species: 'paras', ability: 'desolateland', item: 'lifeorb', gender: 'M',
 				moves: ['gigadrain', 'blueflare', 'sludgewave'],
 				baseSignatureMove: 'bugbuzz', signatureMove: 'Bug Buzz',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'timid',
 			},	
 			'General Knowledge': {
 				species: 'Sigilyph', ability: 'simple', item: 'leftovers', gender: 'M',
 				moves: ['cosmicpower', 'roost', 'tailglow'],
 				baseSignatureMove: 'storedpower', signatureMove: 'Stored Power',
-				evs: {hp: 252, spdef: 252, spa: 4}, nature: 'Calm',
+				evs: {hp: 252, spd: 252, spa: 4}, nature: 'Calm',
 			},
 			'sparktrain': {
 				species: 'Seel', ability: 'Regenerator', item: 'Life Orb', gender: 'M',
 				moves: ['extremespeed', 'fakeout', 'precipiceblades'],
 				baseSignatureMove: 'Waterfall', signatureMove: 'waterfall',
-				evs: {hp: 232, atk: 252, spd: 24}, nature: 'adamant',
+				evs: {hp: 232, atk: 252, spe: 24}, nature: 'adamant',
 			},
 			'Animaignis': {
 				species: 'Gyarados', ability: 'Contrary', item: 'assaultvest', gender: 'M',
 				moves: ['vcreate', 'waterfall', 'earthquake'],
 				signatureMove: 'Dragon Ascent',
-				evs: {atk: 252, spd: 252, spdef: 4}, nature: 'jolly',
+				evs: {atk: 252, spe: 252, spdef: 4}, nature: 'jolly',
 			},
 			'DarkSlay': {
 				species: 'Krilowatt', ability: 'Magic Guard', item: 'Life Orb', gender: 'M',
 				moves: ['discharge', 'heartswap', 'recover'],
 				signatureMove: 'Scald',
-				evs: {spa: 252, spd: 252, spdef: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, spdef: 4}, nature: 'Timid',
 			},
 			'KhosroTheGreat': {
 				species: 'Sceptile-Mega', ability: 'Contrary', item: 'Life Orb', gender: 'M',
-				moves: ['dragonascent', 'earthquake', 'dragonclaw'],
-				signatureMove: 'Leaf Blade',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly',
+				moves: ['dragonascent', 'earthquake', 'leafblade'],
+				signatureMove: 'Choke',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly',
 			},
 			'Lul Pokemanz': {
 				species: 'Umbreon', ability: 'Unaware', item: 'Leftovers', gender: 'M',
 				moves: ['cosmicpower', 'moonlight', 'toxic'],
 				signatureMove: 'Foul Play',
-				evs: {hp: 252, def: 252, spdef: 4}, nature: 'Bold',
+				evs: {hp: 252, def: 252, spd: 4}, nature: 'Bold',
 			},
 			'JackMM': {
 				species: 'Meganium', ability: 'Desolate Land', item: 'Leftovers', gender: 'M',
@@ -255,19 +255,19 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Darkrai', ability: 'Mega Launcher', item: 'Life Orb', gender: 'M',
 				moves: ['originpulse', 'aurasphere', 'darkvoid'],
 				signatureMove: 'Dark Pulse',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid',
 			},
 			'PenQuin': {
 				species: 'Piplup', ability: 'No Guard', item: 'Life Orb', gender: 'M',
 				moves: ['blizzard', 'focusblast', 'hurricane'],
 				signatureMove: 'Hydro Pump',
-				evs: {spa: 252, spd: 252, spdef: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, spdef: 4}, nature: 'Timid',
 			},
 			'ultimategamer726': {
 				species: 'Crawdaunt', ability: 'Tough Claws', item: 'Life Orb', gender: 'M',
 				moves: ['aquajet', 'knockoff', 'icepunch'],
 				signatureMove: 'Crabhammer',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly',
 			},
 			'MacDreDog': {
 				species: 'Blastoise-Mega', ability: 'Skill Link', item: 'Leftovers', gender: 'M',
@@ -279,58 +279,58 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Blaziken-Mega', ability: 'Reckless', item: 'Life Orb', gender: 'M',
 				moves: ['highjumpkick', 'bravebird', 'wildcharge'],
 				signatureMove: 'Flare Blitz',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly',
 			},
 			'Shadow ✪f Lord': {
 				species: 'Blaziken-Mega', ability: 'Huge Power', item: 'Life Orb', gender: 'M',
 				moves: ['vcreate', 'knockoff', 'earthquake'],
 				signatureMove: 'Power-Up Punch',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Adamant',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Adamant',
 			},
 			'Dratias': {
 				species: 'Latias-Mega', ability: 'Protean', item: 'Life Orb',
 				moves: ['dragonpulse', 'moonblast', 'aurasphere'],
 				signatureMove: 'Psystrike',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid',
 			},
 			'Buzzma': {
 				species: 'Zoroark', ability: 'Protean', item: 'Life Orb', gender: 'M',
 				moves: ['darkpulse', 'psystrike', 'dracometeor'],
 				signatureMove: 'Sludge Wave',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid',
 			},
 			'Nazi Moderino': {
 				species: 'Litleo', ability: 'Snow Warning', item: 'Black Sludge', gender: 'M',
 				moves: ['payday', 'trick', 'chatter'],
 				signatureMove: 'Poison Gas',
-				evs: {spa: 252, spd: 252, atk: 4}, nature: 'Naive',
+				evs: {spa: 252, spe: 252, atk: 4}, nature: 'Naive',
 			},
 			'ChallengerBot': {
 				species: 'Mollux', ability: 'Desolate Land', item: 'Choice Scarf', gender: 'M',
 				moves: ['sludgewave', 'thunderbolt', 'psystrike'],
 				signatureMove: 'Searing Shot',
-				evs: {spa: 252, spd: 252, spdef: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, spdef: 4}, nature: 'Timid',
 			},
 			'Skillett': {
 				species: 'Diglett', ability: 'Huge Power', item: 'Focus Sash', gender: 'M',
 				moves: ['knockoff', 'rockslide', 'suckerpunch'],
 				signatureMove: 'Precipice Blades',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly',
 			},
 			'Champ✪Shadow': {
 				species: 'Hoopa-Unbound', ability: 'Tough Claws', item: 'Life Orb', gender: 'M',
 				moves: ['zenheadbutt', 'closecombat', 'meteormash'],
 				signatureMove: 'Hyperspace Fury',
-				evs: {atk: 252, spd: 252, hp: 4}, nature: 'Jolly',
+				evs: {atk: 252, spe: 252, hp: 4}, nature: 'Jolly',
 			},
 			'Derek Uzumaki': {
 				species: 'Infernape', ability: 'Reckless', item: 'Life Orb', gender: 'M',
 				moves: ['flareblitz', 'headsmash', 'wildcharge'],
 				signatureMove: 'High Jump Kick',
-				evs: {atk:252, spd:252, hp: 4}, nature: 'Jolly',
+				evs: {atk:252, spe:252, hp: 4}, nature: 'Jolly',
 			},
 			'Legacy Wobz': {
-				species: 'Wobuffet', ability: 'Prankster', item: 'Leftovers',
+				species: 'Wobbuffet', ability: 'Prankster', item: 'Leftovers',
 				moves: ['destinybond', 'moonblast', 'recover'],
 				signatureMove: 'Psystrike',
 				evs: {spa: 252, hp: 252, def: 4}, nature: 'Modest',
@@ -339,25 +339,25 @@ randomSeasonalMeleeTeam: function (side) {
 				species: 'Gible', ability: 'Speed Boost', item: 'Life Orb', gender: 'M',
 				moves: ['precipiceblades', 'boltstrike', 'flareblitz'],
 				signatureMove: 'Outrage',
-				evs: {atk:252, spd:252, hp: 4}, nature: 'Jolly',
+				evs: {atk:252, spe:252, hp: 4}, nature: 'Jolly',
 			},
 			'Bronze0re': {
 				species: 'Bronzong', ability: 'Regenerator', item: 'leftovers',
 				moves: ['toxic', 'doomdesire', 'cosmicpower',],
 				signatureMove: 'Gyro Ball',
-				evs: {hp: 252, def: 252, spdef: 4}, nature: 'Relaxed',
+				evs: {hp: 252, def: 252, spd: 4}, nature: 'Relaxed',
 			},
 			'TatacoolThreat': {
 				species: 'Plasmanta', ability: 'Protean', item: 'Air Balloon',
 				moves: ['thunderbolt', 'scald', 'flashcannon'],
 				signatureMove: 'Sludge Wave',
-				evs: {spa: 252, spd: 252, spdef: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, spdef: 4}, nature: 'Timid',
 			},
 			'illst.God': {
 				species: 'Lucario-Mega', ability: 'Banter', item: 'Life Orb', gender: 'M',
 				moves: ['flashcannon', 'psystrike', 'earthpower'],
 				signatureMove: 'Aura Sphere',
-				evs: {spa: 252, spd: 252, hp: 4}, nature: 'Timid',
+				evs: {spa: 252, spe: 252, hp: 4}, nature: 'Timid',
 			},
 		};
 
@@ -365,8 +365,8 @@ randomSeasonalMeleeTeam: function (side) {
 		for (let i = 0; i < 6; i++) {
 			if (i === 2) {
 				let monIds = pool.slice(0, 6).map(p => toId(p));
-				let monName = Object.keys(sets).filter(s => toId(s) === userid)[0];
-				if (monName && monIds.indexOf(userid) === -1) {
+				let monName = Object.keys(sets).filter(s => toId(s) === userid || (toId(s) === "sparkychild" && userid === "charliekobayshi"))[0];
+				if (monName && monIds.indexOf(toId(monName)) === -1) {
 					pool[2] = monName;
 				}
 			}
